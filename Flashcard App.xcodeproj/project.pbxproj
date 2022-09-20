@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA4F8A6728D974510053FC95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA4F8A6828D976630053FC95 /* FlashCard_App.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FlashCard_App.gif; path = ../FlashCard_App.gif; sourceTree = "<group>"; };
 		BAFB65CF28D17397000B6EF4 /* Flashcard App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFB65D228D17397000B6EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAFB65D428D17397000B6EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		BAFB65C628D17397000B6EF4 = {
 			isa = PBXGroup;
 			children = (
+				BA4F8A6728D974510053FC95 /* README.md */,
+				BA4F8A6828D976630053FC95 /* FlashCard_App.gif */,
 				BAFB65D128D17397000B6EF4 /* Flashcard App */,
 				BAFB65E828D17399000B6EF4 /* Flashcard AppTests */,
 				BAFB65F228D17399000B6EF4 /* Flashcard AppUITests */,
