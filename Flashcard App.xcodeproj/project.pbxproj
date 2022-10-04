@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA5F24C728E3F72300D8FF17 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F24C628E3F72300D8FF17 /* CreationViewController.swift */; };
 		BAFB65D328D17397000B6EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB65D228D17397000B6EF4 /* AppDelegate.swift */; };
 		BAFB65D528D17397000B6EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB65D428D17397000B6EF4 /* SceneDelegate.swift */; };
 		BAFB65D728D17397000B6EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB65D628D17397000B6EF4 /* ViewController.swift */; };
@@ -37,7 +38,8 @@
 
 /* Begin PBXFileReference section */
 		BA4F8A6728D974510053FC95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BA4F8A6828D976630053FC95 /* FlashCard_App.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FlashCard_App.gif; path = ../FlashCard_App.gif; sourceTree = "<group>"; };
+		BA4F8A6928D97A370053FC95 /* FlashCard_App.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FlashCard_App.gif; sourceTree = "<group>"; };
+		BA5F24C628E3F72300D8FF17 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		BAFB65CF28D17397000B6EF4 /* Flashcard App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flashcard App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFB65D228D17397000B6EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAFB65D428D17397000B6EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +83,8 @@
 		BAFB65C628D17397000B6EF4 = {
 			isa = PBXGroup;
 			children = (
+				BA4F8A6928D97A370053FC95 /* FlashCard_App.gif */,
 				BA4F8A6728D974510053FC95 /* README.md */,
-				BA4F8A6828D976630053FC95 /* FlashCard_App.gif */,
 				BAFB65D128D17397000B6EF4 /* Flashcard App */,
 				BAFB65E828D17399000B6EF4 /* Flashcard AppTests */,
 				BAFB65F228D17399000B6EF4 /* Flashcard AppUITests */,
@@ -107,6 +109,7 @@
 				BAFB65D428D17397000B6EF4 /* SceneDelegate.swift */,
 				BAFB65D628D17397000B6EF4 /* ViewController.swift */,
 				BAFB65D828D17397000B6EF4 /* Main.storyboard */,
+				BA5F24C628E3F72300D8FF17 /* CreationViewController.swift */,
 				BAFB65DB28D17398000B6EF4 /* Assets.xcassets */,
 				BAFB65DD28D17398000B6EF4 /* LaunchScreen.storyboard */,
 				BAFB65E028D17398000B6EF4 /* Info.plist */,
@@ -265,6 +268,7 @@
 				BAFB65D728D17397000B6EF4 /* ViewController.swift in Sources */,
 				BAFB65D328D17397000B6EF4 /* AppDelegate.swift in Sources */,
 				BAFB65D528D17397000B6EF4 /* SceneDelegate.swift in Sources */,
+				BA5F24C728E3F72300D8FF17 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
