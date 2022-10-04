@@ -6,10 +6,6 @@ Allows users to create their own flashcards
 ### App Walk-though
 ![CodePath - Lab 5](https://user-images.githubusercontent.com/105008767/193738740-be93d82a-746f-4ec1-9993-35a1be99c111.gif)
 
-<img src="CodePath - Lab 5.gif" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
-
 ## Required
 - [x] User can open the creation screen
 - [x] User can cancel out of the creation screen
