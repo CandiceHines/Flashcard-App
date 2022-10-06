@@ -4,7 +4,8 @@
 Allows users to create their own flashcards
 
 ### App Walk-though
-![CodePath - Lab 5](https://user-images.githubusercontent.com/105008767/193738740-be93d82a-746f-4ec1-9993-35a1be99c111.gif)
+![Lab 5](https://user-images.githubusercontent.com/105008767/194351287-bac1552c-59c5-4f83-b18f-4c0b99532b3e.gif)
+
 
 ## Required
 - [x] User can open the creation screen
