@@ -1,3 +1,21 @@
+## Lab 3
+
+### App Description
+Allows users to go back to previously create flashcards
+
+### App Walk-though
+![Lab 3](https://user-images.githubusercontent.com/105008767/195009699-3ac680e1-6f9a-47a4-a5c8-30a518d6cc21.gif)
+
+
+## Required
+- [x] User can browse through multiple flashcards
+- [ ] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [ ] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions
+
 ## Lab 2
 
 ### App Description
