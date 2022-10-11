@@ -46,6 +46,8 @@ class CreationViewController: UIViewController {
         
         flashcardController.initializeView()
         dismiss(animated: true)
+        flashcardController.updateLabels()
+        flashcardController.updateNextPrevButtons()
     }
 
 }
