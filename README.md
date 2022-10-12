@@ -4,7 +4,8 @@
 Allows users to go back to previously create flashcards
 
 ### App Walk-though
-![Lab 3](https://user-images.githubusercontent.com/105008767/195009699-3ac680e1-6f9a-47a4-a5c8-30a518d6cc21.gif)
+![Correct Lab 3](https://user-images.githubusercontent.com/105008767/195246595-8e1e8e05-8123-4d4e-8578-f0514393e2ef.gif)
+
 
 
 ## Required
