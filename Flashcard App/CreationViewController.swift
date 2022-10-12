@@ -35,19 +35,19 @@ class CreationViewController: UIViewController {
         let questionText = questionTextField.text
         let answerText = answerTextField.text
         
-        flashcardController.updateFlashcard(question: questionText!, answer: answerText!)
-        
         let answerOneText = answerChoice1Text.text
         let answerTwoText = answerChoice2Text.text
         let answerThreeText = answerChoice3Text.text
         let answerFourText = answerChoice4Text.text
         
         flashcardController.updateAnswers(answerOne: answerOneText!, answerTwo: answerTwoText!, answerThree: answerThreeText!, answerFour: answerFourText!)
+        flashcardController.updateFlashcard(question: questionText!, answer: answerText!)
         
         flashcardController.initializeView()
         dismiss(animated: true)
         flashcardController.updateLabels()
         flashcardController.updateNextPrevButtons()
+        flashcardController.saveAllFlashcardsToDisk()
     }
 
 }

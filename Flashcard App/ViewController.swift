@@ -27,11 +27,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer3: UILabel!
     @IBOutlet weak var answer4: UILabel!
     @IBAction func didTapOnPrev(_ sender: Any) {
-        initializeView()
         currentIndex = currentIndex - 1
         
         updateLabels()
- 
+        
+        updateAnswers(answerOne: flashcards[currentIndex].answerOne, answerTwo: flashcards[currentIndex].answerTwo, answerThree: flashcards[currentIndex].answerThree, answerFour: flashcards[currentIndex].answerFour)
         
         updateNextPrevButtons()
     }
@@ -40,6 +40,8 @@ class ViewController: UIViewController {
         currentIndex = currentIndex + 1
         
         updateLabels()
+        
+        updateAnswers(answerOne: flashcards[currentIndex].answerOne, answerTwo: flashcards[currentIndex].answerTwo, answerThree: flashcards[currentIndex].answerThree, answerFour: flashcards[currentIndex].answerFour)
         
         updateNextPrevButtons()
     }
@@ -60,7 +62,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initializeView()
         readSavedFlashcards()
         
         if flashcards.count == 0 {
@@ -69,8 +71,7 @@ class ViewController: UIViewController {
             updateLabels()
             updateNextPrevButtons()
         }
-        updateAnswers(answerOne: "Egypt", answerTwo: "Brazil", answerThree: "Africa", answerFour: "Rome")
-        initializeView()
+
     }
     
     func initializeView() {
@@ -94,6 +95,7 @@ class ViewController: UIViewController {
         backLabel.isHidden = true
         frontLabel.isHidden = false
     }
+    
     func updateNextPrevButtons() {
         if currentIndex == flashcards.count - 1 {
             nextButton.isEnabled = false
@@ -102,10 +104,11 @@ class ViewController: UIViewController {
         }
     }
     func updateFlashcard(question: String, answer: String){
-        let flashcard = Flashcard(question: question, answer: answer, answerOne: answer, answerTwo: answer, answerThree: answer, answerFour: answer)
+        let flashcard = Flashcard(question: question, answer: answer, answerOne: answer1.text!, answerTwo: answer2.text!, answerThree: answer3.text!, answerFour: answer4.text!)
         frontLabel.text = question
         backLabel.text = answer
         flashcards.append(flashcard)
+        
         print("Added a new FlashCard, take a look!", flashcards)
         
         print("We now have \(flashcards.count) flashcards")
@@ -116,33 +119,38 @@ class ViewController: UIViewController {
         updateNextPrevButtons()
         
         updateLabels()
+        
+        saveAllFlashcardsToDisk()
     }
     func updateLabels() {
         let currentFlashcard = flashcards[currentIndex]
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
+        
     }
-    func saveAllFlashcardsToSick() {
-        let dictionaryArray = flashcards.map { (card) -> [String: String] in return ["question": card.question, "answer": card.answer, "answer one": card.answerOne, "answer two": card.answerTwo, "answer 3": card.answerThree, "answer 4": card.answerFour]
+    func saveAllFlashcardsToDisk() {
+        let dictionaryArray = flashcards.map { (card) -> [String: String] in return ["question": card.question, "answer": card.answer, "answerOne": card.answerOne, "answerTwo": card.answerTwo, "answerThree": card.answerThree, "answerFour": card.answerFour]
         }
-        UserDefaults.standard.set(flashcards, forKey: "flashcards")
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
         
         print("Flashcards saved to UserDefaults!")
     }
     
     func readSavedFlashcards() {
-        if let dictionaryArray = UserDefaults.standard.set(flashcards, forKey: "flashcards") as? [[String: String]] {
-            let savedCards = dictionaryArray.map { dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, answerOne: dictionary["answer one"]!, answerTwo: dictionary["answer two"]!, answerThree: dictionary["answer 3"]!, answerFour: dictionary["answer 4"]!)
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
+            let savedCards = dictionaryArray.map { dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, answerOne: dictionary["answerOne"]!, answerTwo: dictionary["answerTwo"]!, answerThree: dictionary["answerThree"]!, answerFour: dictionary["answerFour"]!)
             }
             flashcards.append(contentsOf: savedCards)
         }
     }
+    
     func updateAnswers(answerOne: String, answerTwo: String, answerThree: String, answerFour: String){
         answer1.text = answerOne
         answer2.text = answerTwo
         answer3.text = answerThree
         answer4.text = answerFour
     }
+    
     
     @IBAction func didClickAnswerOne(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 200, options: .curveEaseIn, animations: {
