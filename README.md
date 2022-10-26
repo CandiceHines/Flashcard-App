@@ -4,7 +4,8 @@
 Allows users a aesthetic, seemless experience when flipping through flashcards 
 
 ### App Walk-though
-/Users/candicehines/Desktop/Lab 4.gif
+![Lab 4](https://user-images.githubusercontent.com/105008767/198077490-7258ce5c-03e4-43bd-8afa-d81cebf5abaa.gif)
+
 
 ## Required
 - [x] User should see the app icon 
