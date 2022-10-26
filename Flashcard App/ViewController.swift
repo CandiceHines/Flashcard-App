@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         updateAnswers(answerOne: flashcards[currentIndex].answerOne, answerTwo: flashcards[currentIndex].answerTwo, answerThree: flashcards[currentIndex].answerThree, answerFour: flashcards[currentIndex].answerFour)
         
         updateNextPrevButtons()
+        animateCardIn()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
@@ -44,17 +45,17 @@ class ViewController: UIViewController {
         updateAnswers(answerOne: flashcards[currentIndex].answerOne, answerTwo: flashcards[currentIndex].answerTwo, answerThree: flashcards[currentIndex].answerThree, answerFour: flashcards[currentIndex].answerFour)
         
         updateNextPrevButtons()
+        animateCardOut()
     }
     @IBOutlet weak var prevButton: UIButton!
     
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var card: UIView!
     
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
-    
-    var frontLabelPositionIsLeft = true
-    var backLabelPositionIsLeft = true
+
     var didPressButton = false
     
     var flashcards = [Flashcard] ()
@@ -94,6 +95,26 @@ class ViewController: UIViewController {
         backLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         backLabel.isHidden = true
         frontLabel.isHidden = false
+    }
+    func flipFlashcard() {
+        UIView.transition(with: card, duration: 0.1, options: .transitionFlipFromRight, animations: {
+            self.frontLabel.isHidden = true
+            self.backLabel.isHidden = false
+        })
+    }
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardIn()
+        })
+    }
+    func animateCardIn() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.1) {
+            self.card.transform = CGAffineTransform.identity
+        }
     }
     
     func updateNextPrevButtons() {
@@ -153,19 +174,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func didClickAnswerOne(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 200, options: .curveEaseIn, animations: {
-            if self.frontLabelPositionIsLeft {
-                self.frontLabel.center.x = self.view.bounds.width - 200
-            }
-            else {
-                self.frontLabel.center.x = 200
-        }
-            self.frontLabelPositionIsLeft = !(self.frontLabelPositionIsLeft)
-        }, completion: nil)
-        
         if answer1.text == backLabel.text {
-            frontLabel.isHidden = true
-            backLabel.isHidden = false
+            flipFlashcard()
             answer1.text = "Correct!"
         }
         else if answer1.text != backLabel.text {
@@ -176,19 +186,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didClickAnswerTwo(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 200, options: .curveEaseIn, animations: {
-            if self.frontLabelPositionIsLeft {
-                self.frontLabel.center.x = self.view.bounds.width - 200
-            }
-            else {
-                self.frontLabel.center.x = 200
-        }
-            self.frontLabelPositionIsLeft = !(self.frontLabelPositionIsLeft)
-        }, completion: nil)
-        
         if answer2.text == backLabel.text {
-            frontLabel.isHidden = true
-            backLabel.isHidden = false
+            flipFlashcard()
             answer2.text = "Correct!"
         }
         else if answer2.text != backLabel.text {
@@ -199,19 +198,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didClickAnswerThree(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 200, options: .curveEaseIn, animations: {
-            if self.frontLabelPositionIsLeft {
-                self.frontLabel.center.x = self.view.bounds.width - 200
-            }
-            else {
-                self.frontLabel.center.x = 200
-        }
-            self.frontLabelPositionIsLeft = !(self.frontLabelPositionIsLeft)
-        }, completion: nil)
-        
         if answer3.text == backLabel.text {
-            frontLabel.isHidden = true
-            backLabel.isHidden = false
+            flipFlashcard()
             answer3.text = "Correct!"
         }
         else if answer3.text != backLabel.text {
@@ -222,19 +210,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didClickAnswerFour(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 200, options: .curveEaseIn, animations: {
-            if self.frontLabelPositionIsLeft {
-                self.frontLabel.center.x = self.view.bounds.width - 200
-            }
-            else {
-                self.frontLabel.center.x = 200
-        }
-            self.frontLabelPositionIsLeft = !(self.frontLabelPositionIsLeft)
-        }, completion: nil)
-        
         if answer4.text == backLabel.text {
-            frontLabel.isHidden = true
-            backLabel.isHidden = false
+            flipFlashcard()
             answer4.text = "Correct!"
         }
         else if answer4.text != backLabel.text {
